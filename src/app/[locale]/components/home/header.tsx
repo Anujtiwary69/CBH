@@ -19,6 +19,10 @@ const menuItems = [
         ],
     },
     {
+        name:"rooms",
+        link: '/rooms',
+    },
+    {
         name: 'Sanatorium',
         link: '/sanatorium',
         // submenu: [

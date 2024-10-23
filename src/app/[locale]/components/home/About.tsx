@@ -12,7 +12,7 @@ export default function About() {
                     <div className="col-lg-6 col-md-12  upper">
                         <div className="section-title two" data-cue="zoomIn">
                             {/*<h4>ABOUT CHORTOQ HOSPITALITY</h4>*/}
-                            <h1>{t('home:about_chortoq_hospitality')}</h1>
+                            <h1>About Grand Chortoq Resort</h1>
                             {/*<h1>Californta, Usa</h1>*/}
                             <p className="section-desc-2">
                                 {t('home:about_text')}

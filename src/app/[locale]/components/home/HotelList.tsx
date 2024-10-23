@@ -6,21 +6,22 @@ const hotel= [
     {
         name: "grand_chortoq_resort",
         des:"nature_healing_paradise",
-        image:"/assets/images/hotels/GRAND.jpg"
+        image:"/assets/images/rooms/room-1.jpg"
     },
     {
         name: "chortoq_boutique_hotel",
         des:"chic_modern_vibrant",
-        image:"/assets/images/hotels/BOUTIQUE.jpg"
+        image:"/assets/images/rooms/room-2.jpg"
     },
     {
         name: "o2zoda_palace",
         des:"serene_mountain_escape",
-        image:"/assets/images/hotels/O2ZODA.jpg"
+        image:"/assets/images/rooms/room-4.jpg"
     }
 ]
 export default function HotelList(){
     const { t,i18n } = useTranslation();
+    const lang = "/" + i18n.language;
     console.log(i18n.language)
 
     const handleLanguageChanged = useCallback(() => {
@@ -46,9 +47,11 @@ export default function HotelList(){
                                     {/*    alt=""*/}
                                     {/*/>*/}
                                 </div>
-                                <h1>{t('home:featured_hotels')}</h1>
+                                <h1>Rooms & Suites</h1>
                                 <p className="section-desc-1">
-                                    {t('home:featured_hotels_text')}
+                                    Proactively morph optimal infomediaries rather than accurate expertise. Intrinsicly progressive resources rather than resource-leveling
+
+
                                 </p>
                             </div>
                         </div>
@@ -76,21 +79,50 @@ export default function HotelList(){
                         <div className="room-thumb">
                             <img src={h.image} alt=""/>
                             <div className="room-details-button">
-                                <a href="room-details.html">
+                                <a href={`${lang}/room-details`}>
                                     {t('home:explore')}
                                     <i className="bi bi-arrow-right"/>
                                 </a>
                             </div>
                         </div>
-                        {/*<div className="room-pricing">*/}
-                        {/*    <span className="dolar">$560</span>*/}
-                        {/*    <span>Night</span>*/}
-                        {/*</div>*/}
+                        <div className="room-pricing">
+                            <span className="dolar">$560</span>
+                            <span>Night</span>
+                        </div>
                         <div className="room-content">
-                            <h4>{t(`home:${h.des}`)}</h4>
-                            <a href="royella/room.html" style={{marginBottom: h.name === "o2zoda_palace" ? "44px" : "20px"}}>{t(`home:${h.name}`)}</a>
+                            <h4>simply dummy text of the printing and typesetting industry. </h4>
+                            <a href={`${lang}/room-details`}
+                                style={{marginBottom: h.name === "o2zoda_palace" ? "44px" : "20px"}}>Lorem Ipsum
+                            </a>
                             {/*<p>{t(`home:${h.des}`)}</p>*/}
                         </div>
+                        <div className="room-bottom">
+                            <div className="room-bottom-icon">
+    <span>
+      <img src="/assets/images/home-1/room-bottom-icon.png" alt=""/>2 King Bed
+    </span>
+                            </div>
+                            <div className="coustomar-rating">
+                                <ul>
+                                    <li>
+                                        <i className="bi bi-star-fill"/>
+                                    </li>
+                                    <li>
+                                        <i className="bi bi-star-fill"/>
+                                    </li>
+                                    <li>
+                                        <i className="bi bi-star-fill"/>
+                                    </li>
+                                    <li>
+                                        <i className="bi bi-star-fill"/>
+                                    </li>
+                                    <li>
+                                        <i className="bi bi-star-half"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>

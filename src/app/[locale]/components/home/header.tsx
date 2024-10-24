@@ -9,15 +9,15 @@ import LanguageChanger from "@/app/[locale]/components/LanguageChanger";
 
 
 const menuItems = [
-    {
-        name: 'Hotels',
-        link: '/hotels',
-        submenu: [
-            {name: 'Grand Chortoq Resort', link: '/meetings',},
-            {name: 'Chortoq Boutique Hotel', link: '/events'},
-            {name: 'O2Zoda Resort & Spa', link: '/conferences'},
-        ],
-    },
+    // {
+    //     name: 'Hotels',
+    //     link: '/hotels',
+    //     submenu: [
+    //         {name: 'Grand Chortoq Resort', link: '/meetings',},
+    //         {name: 'Chortoq Boutique Hotel', link: '/events'},
+    //         {name: 'O2Zoda Resort & Spa', link: '/conferences'},
+    //     ],
+    // },
     {
         name:"rooms",
         link: '/rooms',
@@ -221,72 +221,72 @@ export default function Header() {
 
                                             <a href={lang + menuItem.link}>
                                                 {t(`menus:menu.${menuItem.name.toLowerCase()}.name`)}
-                                                {menuItem.submenu ? <i className="fas fa-chevron-down"/> : null}
+                                                {/*{menuItem.submenu ? <i className="fas fa-chevron-down"/> : null}*/}
                                             </a>
 
-                                            {menuItem.submenu && (
+                                {/*            {menuItem.submenu && (*/}
 
-                                                <ul className="sub-menu">
-                                                    {menuItem.name === 'Shop' ? (
-                                                        shop.map((subItem, subIndex) => (
-                                                            <li key={subItem.name + subIndex}>
-                                                                <Link href={lang + subItem.link}>
-                                                                    {t(`${subItem.name}`)}
-                                                                </Link>
-                                                            </li>
-                                                        ))
-                                                    ) : menuItem.name === 'Meet' ? (
-                                                        meet.map((subItem, subIndex) => (
-                                                            <li key={subItem.name + subIndex}>
-                                                                <Link href={lang + subItem.link}>
-                                                                    {t(`${subItem.name}`)}
-                                                                </Link>
-                                                            </li>
-                                                        ))
-                                                    ) : menuItem.name === 'Wellness' ? (
-                                                            wellness.map((subItem, subIndex) => (
-                                                                <li key={subItem.name + subIndex}>
-                                                                    <Link href={lang + subItem.link}>
-                                                                        {t(`${subItem.name}`)}
-                                                                    </Link>
-                                                                </li>
-                                                            ))
-                                                        ) :
+                                {/*                <ul className="sub-menu">*/}
+                                {/*                    {menuItem.name === 'Shop' ? (*/}
+                                {/*                        shop.map((subItem, subIndex) => (*/}
+                                {/*                            <li key={subItem.name + subIndex}>*/}
+                                {/*                                <Link href={lang + subItem.link}>*/}
+                                {/*                                    {t(`${subItem.name}`)}*/}
+                                {/*                                </Link>*/}
+                                {/*                            </li>*/}
+                                {/*                        ))*/}
+                                {/*                    ) : menuItem.name === 'Meet' ? (*/}
+                                {/*                        meet.map((subItem, subIndex) => (*/}
+                                {/*                            <li key={subItem.name + subIndex}>*/}
+                                {/*                                <Link href={lang + subItem.link}>*/}
+                                {/*                                    {t(`${subItem.name}`)}*/}
+                                {/*                                </Link>*/}
+                                {/*                            </li>*/}
+                                {/*                        ))*/}
+                                {/*                    ) : menuItem.name === 'Wellness' ? (*/}
+                                {/*                            wellness.map((subItem, subIndex) => (*/}
+                                {/*                                <li key={subItem.name + subIndex}>*/}
+                                {/*                                    <Link href={lang + subItem.link}>*/}
+                                {/*                                        {t(`${subItem.name}`)}*/}
+                                {/*                                    </Link>*/}
+                                {/*                                </li>*/}
+                                {/*                            ))*/}
+                                {/*                        ) :*/}
 
-                                                        menuItem.name === 'Hotels' ? (
-                                                            hotels.map((subItem, subIndex) => (
-                                                                <li key={subItem.name + subIndex}>
-                                                                    <Link href={lang + subItem.link}>
-                                                                        {t(`${subItem.name}`)}
-                                                                    </Link>
-                                                                </li>
-                                                            ))
-                                                        ) : menuItem.name === 'Dine' ? (
-                                                                dine.map((subItem, subIndex) => (
-                                                                    <li key={subItem.name + subIndex}>
-                                                                        <Link href={lang + subItem.link}>
-                                                                            {t(`${subItem.name}`)}
-                                                                        </Link>
-                                                                    </li>
-                                                                ))
-                                                            )
-                                                            : menuItem.name === 'Sanatorium' ? (
-                                                                sanatorium.map((subItem, subIndex) => (
-                                                                    <li key={subItem.name + subIndex}>
-                                                                        <Link href={lang + subItem.link}>
-                                                                            {t(`${subItem.name}`)}
-                                                                        </Link>
-                                                                    </li>
-                                                                ))
-                                                            ) : (
-                                                                <li>
+                                {/*                        menuItem.name === 'Hotels' ? (*/}
+                                {/*                            hotels.map((subItem, subIndex) => (*/}
+                                {/*                                <li key={subItem.name + subIndex}>*/}
+                                {/*                                    <Link href={lang + subItem.link}>*/}
+                                {/*                                        {t(`${subItem.name}`)}*/}
+                                {/*                                    </Link>*/}
+                                {/*                                </li>*/}
+                                {/*                            ))*/}
+                                {/*                        ) : menuItem.name === 'Dine' ? (*/}
+                                {/*                                dine.map((subItem, subIndex) => (*/}
+                                {/*                                    <li key={subItem.name + subIndex}>*/}
+                                {/*                                        <Link href={lang + subItem.link}>*/}
+                                {/*                                            {t(`${subItem.name}`)}*/}
+                                {/*                                        </Link>*/}
+                                {/*                                    </li>*/}
+                                {/*                                ))*/}
+                                {/*                            )*/}
+                                {/*                            : menuItem.name === 'Sanatorium' ? (*/}
+                                {/*                                sanatorium.map((subItem, subIndex) => (*/}
+                                {/*                                    <li key={subItem.name + subIndex}>*/}
+                                {/*                                        <Link href={lang + subItem.link}>*/}
+                                {/*                                            {t(`${subItem.name}`)}*/}
+                                {/*                                        </Link>*/}
+                                {/*                                    </li>*/}
+                                {/*                                ))*/}
+                                {/*                            ) : (*/}
+                                {/*                                <li>*/}
 
-                                                                </li>
-                                                            )
+                                {/*                                </li>*/}
+                                {/*                            )*/}
 
-                                                    }
-                                                </ul>
-                                            )}
+                                {/*                    }*/}
+                                {/*                </ul>*/}
+                                {/*            )}*/}
                                         </li>
                                     ))}
                                 </ul>
@@ -312,72 +312,72 @@ export default function Header() {
 
                                         <a href={lang + menuItem.link}>
                                             {t(`menus:menu.${menuItem.name.toLowerCase()}.name`)}
-                                            {menuItem.submenu ? <i className="fas fa-chevron-down"/> : null}
+                                            {/*{menuItem.submenu ? <i className="fas fa-chevron-down"/> : null}*/}
                                         </a>
 
-                                        {menuItem.submenu && (
+                                        {/*{menuItem.submenu && (*/}
 
-                                            <ul className="sub-menu">
-                                                {menuItem.name === 'Shop' ? (
-                                                    shop.map((subItem, subIndex) => (
-                                                        <li key={subItem.name + subIndex}>
-                                                            <Link href={lang + subItem.link}>
-                                                                {t(`${subItem.name}`)}
-                                                            </Link>
-                                                        </li>
-                                                    ))
-                                                ) : menuItem.name === 'Meet' ? (
-                                                    meet.map((subItem, subIndex) => (
-                                                        <li key={subItem.name + subIndex}>
-                                                            <Link href={lang + subItem.link}>
-                                                                {t(`${subItem.name}`)}
-                                                            </Link>
-                                                        </li>
-                                                    ))
-                                                ) : menuItem.name === 'Wellness' ? (
-                                                        wellness.map((subItem, subIndex) => (
-                                                            <li key={subItem.name + subIndex}>
-                                                                <Link href={lang + subItem.link}>
-                                                                    {t(`${subItem.name}`)}
-                                                                </Link>
-                                                            </li>
-                                                        ))
-                                                    ) :
+                                        {/*    <ul className="sub-menu">*/}
+                                        {/*        {menuItem.name === 'Shop' ? (*/}
+                                        {/*            shop.map((subItem, subIndex) => (*/}
+                                        {/*                <li key={subItem.name + subIndex}>*/}
+                                        {/*                    <Link href={lang + subItem.link}>*/}
+                                        {/*                        {t(`${subItem.name}`)}*/}
+                                        {/*                    </Link>*/}
+                                        {/*                </li>*/}
+                                        {/*            ))*/}
+                                        {/*        ) : menuItem.name === 'Meet' ? (*/}
+                                        {/*            meet.map((subItem, subIndex) => (*/}
+                                        {/*                <li key={subItem.name + subIndex}>*/}
+                                        {/*                    <Link href={lang + subItem.link}>*/}
+                                        {/*                        {t(`${subItem.name}`)}*/}
+                                        {/*                    </Link>*/}
+                                        {/*                </li>*/}
+                                        {/*            ))*/}
+                                        {/*        ) : menuItem.name === 'Wellness' ? (*/}
+                                        {/*                wellness.map((subItem, subIndex) => (*/}
+                                        {/*                    <li key={subItem.name + subIndex}>*/}
+                                        {/*                        <Link href={lang + subItem.link}>*/}
+                                        {/*                            {t(`${subItem.name}`)}*/}
+                                        {/*                        </Link>*/}
+                                        {/*                    </li>*/}
+                                        {/*                ))*/}
+                                        {/*            ) :*/}
 
-                                                    menuItem.name === 'Hotels' ? (
-                                                        hotels.map((subItem, subIndex) => (
-                                                            <li key={subItem.name + subIndex}>
-                                                                <Link href={lang + subItem.link}>
-                                                                    {t(`${subItem.name}`)}
-                                                                </Link>
-                                                            </li>
-                                                        ))
-                                                    ) : menuItem.name === 'Dine' ? (
-                                                            dine.map((subItem, subIndex) => (
-                                                                <li key={subItem.name + subIndex}>
-                                                                    <Link href={lang + subItem.link}>
-                                                                        {t(`${subItem.name}`)}
-                                                                    </Link>
-                                                                </li>
-                                                            ))
-                                                        )
-                                                        : menuItem.name === 'Sanatorium' ? (
-                                                            sanatorium.map((subItem, subIndex) => (
-                                                                <li key={subItem.name + subIndex}>
-                                                                    <Link href={lang + subItem.link}>
-                                                                        {t(`${subItem.name}`)}
-                                                                    </Link>
-                                                                </li>
-                                                            ))
-                                                        ) : (
-                                                            <li>
+                                        {/*            menuItem.name === 'Hotels' ? (*/}
+                                        {/*                hotels.map((subItem, subIndex) => (*/}
+                                        {/*                    <li key={subItem.name + subIndex}>*/}
+                                        {/*                        <Link href={lang + subItem.link}>*/}
+                                        {/*                            {t(`${subItem.name}`)}*/}
+                                        {/*                        </Link>*/}
+                                        {/*                    </li>*/}
+                                        {/*                ))*/}
+                                        {/*            ) : menuItem.name === 'Dine' ? (*/}
+                                        {/*                    dine.map((subItem, subIndex) => (*/}
+                                        {/*                        <li key={subItem.name + subIndex}>*/}
+                                        {/*                            <Link href={lang + subItem.link}>*/}
+                                        {/*                                {t(`${subItem.name}`)}*/}
+                                        {/*                            </Link>*/}
+                                        {/*                        </li>*/}
+                                        {/*                    ))*/}
+                                        {/*                )*/}
+                                        {/*                : menuItem.name === 'Sanatorium' ? (*/}
+                                        {/*                    sanatorium.map((subItem, subIndex) => (*/}
+                                        {/*                        <li key={subItem.name + subIndex}>*/}
+                                        {/*                            <Link href={lang + subItem.link}>*/}
+                                        {/*                                {t(`${subItem.name}`)}*/}
+                                        {/*                            </Link>*/}
+                                        {/*                        </li>*/}
+                                        {/*                    ))*/}
+                                        {/*                ) : (*/}
+                                        {/*                    <li>*/}
 
-                                                            </li>
-                                                        )
+                                        {/*                    </li>*/}
+                                        {/*                )*/}
 
-                                                }
-                                            </ul>
-                                        )}
+                                        {/*        }*/}
+                                        {/*    </ul>*/}
+                                        {/*)}*/}
                                     </li>
                                 ))}
                             </ul>

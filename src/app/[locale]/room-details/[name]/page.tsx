@@ -78,7 +78,7 @@ export default function RoomDetailPage({params}: { params: { name: string } }) {
                                             <div className="room-details-check-content">
                                                 <span><img src="/assets/images/inner/room-details-2.png" alt=""/>Check Out</span>
                                                 <p className="check-item"><i
-                                                    className="bi bi-check2"/>{t("rooms:CheckIn")}</p>
+                                                    className="bi bi-check2"/>{t("rooms:CheckOut")}</p>
 
                                             </div>
                                         </div>

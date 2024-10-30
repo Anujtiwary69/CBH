@@ -15,15 +15,15 @@ export default function About() {
                             <h1>{t('home:about')}</h1>
                             <h4>{t('home:about_subtitle')}</h4>
                             {/*<h1>Californta, Usa</h1>*/}
-                            {/*<p className="section-desc-2">*/}
-                            {/*    {t('home:about_text')}*/}
-                            {/*</p>*/}
+                            <p className="section-desc-2">
+                                {t('home:about_text')}
+                            </p>
                         </div>
 
                         {/*<div className="animation-bar" data-cue="zoomIn"></div>*/}
-                        <div className="luxury-button" data-cue="zoomIn">
-                            <a href="/about.html"> {t('home:learn_more')}</a>
-                        </div>
+                        {/*<div className="luxury-button" data-cue="zoomIn">*/}
+                        {/*    <a href="/about.html"> {t('home:learn_more')}</a>*/}
+                        {/*</div>*/}
                     </div>
                     <div className="col-lg-6 col-md-12">
                         <div className="row" >

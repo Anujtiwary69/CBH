@@ -8,19 +8,34 @@ import HotelList from "@/app/[locale]/components/home/HotelList";
 
 const hotel= [
     {
-        name: "grand_chortoq_resort",
-        des:"nature_healing_paradise",
-        image:"/assets/images/rooms/room-1.jpg"
+        name: "rooms.standard.title",
+        des:"rooms.standard.subtitle",
+        image:"/assets/images/rooms/room-1.png"
     },
     {
-        name: "chortoq_boutique_hotel",
-        des:"chic_modern_vibrant",
-        image:"/assets/images/rooms/room-2.jpg"
+        name: "rooms.deluxe.title",
+        des:"rooms.deluxe.subtitle",
+        image:"/assets/images/rooms/room-2.png"
     },
     {
-        name: "o2zoda_palace",
-        des:"serene_mountain_escape",
-        image:"/assets/images/rooms/room-4.jpg"
+        name: "rooms.suites.title",
+        des:"rooms.suites.subtitle",
+        image:"/assets/images/rooms/room-3.png"
+    },
+    {
+        name: "rooms.royal.title",
+        des:"rooms.royal.subtitle",
+        image:"/assets/images/rooms/room-4.png"
+    },
+    {
+        name: "rooms.sanatorium.title",
+        des:"rooms.sanatorium.subtitle",
+        image:"/assets/images/rooms/room-5.png"
+    },
+    {
+        name: "rooms.handicapped.title",
+        des:"rooms.handicapped.subtitle",
+        image:"/assets/images/rooms/room-6.png"
     }
 ]
 export default function Rooms() {
@@ -29,7 +44,7 @@ export default function Rooms() {
     return (
         <>
             <DefaultHero
-                imageName="hero-bg.jpg"
+                imageName="rooms.jpg"
                 title="The Best Luxury Hotel in UZBEKISTAN"
                 subTitle="Rooms & Suites"
             />
@@ -50,11 +65,35 @@ export default function Rooms() {
             {/*    </div>*/}
             {/*</div>*/}
             <br/>
-            <HotelList/>
-            <div className="container">
+            <div className="room-title-area align-items-center" style={{paddingTop: "30px", paddingBottom: "30px"}}>
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-12 text-center">
+                            <div className="section-title center" data-cue="zoomIn" style={{width: '100%'}}>
+                                <div className="section-thumb">
+                                    {/*<img*/}
+                                    {/*    src="/assets/images/home-1/section-shape1.png"*/}
+                                    {/*    alt=""*/}
+                                    {/*/>*/}
+                                </div>
+                                <div className="section-title two">
+                                    <h4>{t('home:room_subtitle')}</h4>
+                                    <h1>{t('home:ROOMS&SUITES')}</h1>
+
+                                    <p className="section-desc-2" style={{width: '100%'}}>
+                                        {t('home:room_des')}
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container mt">
                 <div className="row align-items-center" style={{paddingTop: "0px", paddingBottom: "50px"}}>
                     {hotel.map((h, index) => (
-                        <div className="col-lg-4 col-md-6" key={h.name}>
+                        <div className="col-lg-4 col-md-6 mt-5" key={h.name}>
                             <div
                                 className="room-single-box"
                                 data-cue="zoomIn"
@@ -71,27 +110,28 @@ export default function Rooms() {
                                 <div className="room-thumb">
                                     <img src={h.image} alt=""/>
                                     <div className="room-details-button">
-                                        <a href={`${lang}/room-details`}>
-                                            {t('home:explore')}
+                                        <a href={`${lang}/room-details/${t(`rooms:${h.name}`).toLowerCase().replace(/\s+/g, '-')}`}>
+                                            {t('rooms:explore')}
                                             <i className="bi bi-arrow-right"/>
                                         </a>
                                     </div>
                                 </div>
                                 <div className="room-pricing">
-                                    <span className="dolar">$560</span>
+                                    <span className="dolar">$000</span>
                                     <span>Night</span>
                                 </div>
                                 <div className="room-content">
-                                    <h4>simply dummy text of the printing and typesetting industry. </h4>
-                                    <a href="royella/room.html"
-                                       style={{marginBottom: h.name === "o2zoda_palace" ? "44px" : "20px"}}>Lorem Ipsum
+                                    <h4>{t(`rooms:${h.des}`)}</h4>
+                                    <a href={`${lang}/room-details/${t(`rooms:${h.name}`).toLowerCase().replace(/\s+/g, '-')}`}
+                                        style={{marginBottom: h.name === "o2zoda_palace" ? "44px" : "20px"}}>
+                                        {t(`rooms:${h.name}`)}
                                     </a>
                                     {/*<p>{t(`home:${h.des}`)}</p>*/}
                                 </div>
                                 <div className="room-bottom">
                                     <div className="room-bottom-icon">
     <span>
-      <img src="/assets/images/home-1/room-bottom-icon.png" alt=""/>2 King Bed
+      <img src="/assets/images/home-1/room-bottom-icon.png" alt=""/> {t('rooms:KingBed')}
     </span>
                                     </div>
                                     <div className="coustomar-rating">
@@ -121,8 +161,6 @@ export default function Rooms() {
                     ))}
                 </div>
             </div>
-
-
 
 
         </>

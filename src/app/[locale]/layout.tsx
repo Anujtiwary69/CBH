@@ -20,7 +20,7 @@ export default async function RootLayout({
     children: React.ReactNode;
     params: { locale: string }
 }>) {
-    const i18nNamespaces = ["default", "menus", "sanatorium", "home", "footer","wellness","dine","meet","shop","offers","about","press"];
+    const i18nNamespaces = ["default", "menus", "sanatorium", "home", "footer","wellness","dine","meet","shop","offers","about","press","rooms"];
     const {resources} = await initTranslations(params.locale, i18nNamespaces);
     return (
         <html lang="en" className="bg-white">

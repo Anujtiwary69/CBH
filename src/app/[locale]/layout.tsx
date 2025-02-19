@@ -12,7 +12,7 @@ import JSSection from "@/app/[locale]/components/JSSection";
 import initTranslations from "@/app/i18n";
 import TranslationsProvider from "@/app/[locale]/components/TranslationsProvider";
 import 'rsuite/dist/rsuite-no-reset.min.css';
-
+import { Suspense } from 'react'
 
 export default async function RootLayout({
                                              children,
@@ -33,17 +33,24 @@ export default async function RootLayout({
             <meta name="deScription" content=""/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             {/* Favicon */}
+
             <HeadSection/>
+
         </>
         <body>
         <div className="bg-white">
             <TranslationsProvider namespaces={i18nNamespaces} locale={params.locale} resources={resources}>
-
+                <Suspense fallback={<div className="flex justify-center items-center h-screen bg-gray-100">
+                    <div className="relative w-25 h-25">
+                        <img src="/image/logo.png" alt="Company Logo" className="w-50" />
+                    </div>
+                </div>}>
                 <Header/>
-                {children}
-                <JSSection/>
+                    {children}
+                    <JSSection/>
 
-                <Footer/>
+                    <Footer/>
+                </Suspense>
             </TranslationsProvider>
         </div>
 

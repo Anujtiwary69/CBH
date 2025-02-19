@@ -65,6 +65,7 @@ export default function HotelList(){
             <div className="container">
                 <div className="row align-items-center" style={{paddingTop: "0px", paddingBottom: "50px"}}>
                     {hotel.map((h, index) => (
+
                         <div className="col-lg-4 col-md-6" key={h.name}>
                             <div
                                 className="room-single-box"
@@ -80,13 +81,15 @@ export default function HotelList(){
                                 }}
                             >
                                 <div className="room-thumb">
-                                    <img src={h.image} alt=""/>
-                                    <div className="room-details-button">
-                                        <a href={`${lang}/room-details`}>
-                                            {t('rooms:explore')}
-                                            <i className="bi bi-arrow-right"/>
-                                        </a>
-                                    </div>
+                                    <a href={`${lang}/room-details/${t(`rooms:${h.name}`).toLowerCase().replace(/\s+/g, '-')}`}>
+                                        <img src={h.image} alt=""/>
+                                        <div className="room-details-button">
+                                            <a href={`${lang}/room-details/${t(`rooms:${h.name}`).toLowerCase().replace(/\s+/g, '-')}`}>
+                                                {t('rooms:explore')}
+                                                <i className="bi bi-arrow-right"/>
+                                            </a>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div className="room-pricing">
                                     <span className="dolar">$000</span>
@@ -94,8 +97,8 @@ export default function HotelList(){
                                 </div>
                                 <div className="room-content">
                                     <h4>{t(`rooms:${h.des}`)}</h4>
-                                    <a href={`${lang}/room-details`}
-                                       style={{marginBottom: h.name === "o2zoda_palace" ? "44px" : "20px"}}>
+                                    <a href={`${lang}/room-details/${t(`rooms:${h.name}`).toLowerCase().replace(/\s+/g, '-')}`}
+                                        style={{marginBottom: h.name === "o2zoda_palace" ? "44px" : "20px"}}>
                                         {t(`rooms:${h.name}`)}
                                     </a>
                                     {/*<p>{t(`home:${h.des}`)}</p>*/}

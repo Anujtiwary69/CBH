@@ -32,6 +32,7 @@
     "react-datepicker": "^7.3.0",
     "react-dom": "^18",
     "react-i18next": "^15.0.2",
+    "rsuite": "^5.77.1",
     "swiper": "^11.1.12"
   },
   "devDependencies": {

@@ -65,7 +65,7 @@ export default function Rooms() {
             {/*    </div>*/}
             {/*</div>*/}
             <br/>
-            <div className="room-title-area align-items-center" style={{paddingTop: "30px", paddingBottom: "30px"}}>
+            <div className="room-title-area align-items-center" >
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md-12 text-center">

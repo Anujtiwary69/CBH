@@ -44,7 +44,7 @@ export default function RoomDetailPage({params}: { params: { name: string } }) {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="room-details-content mt-0">
-                                        <img src="/assets/images/rooms/room-1.png" alt="" style={{width:'100%'}} />
+                                        <img src="/assets/images/rooms/room-1.png" alt="" style={{width: '100%'}}/>
                                         {/*<h4>Luxury Room</h4>*/}
                                         <h1>  {t(`rooms:rooms.${params.name.split('-')[0]}.title`)}</h1>
                                         <p>
@@ -100,15 +100,26 @@ export default function RoomDetailPage({params}: { params: { name: string } }) {
                                             </p>
                                             <br/>
                                         </div>
+                                        <h1 className="room-detils-title-2"
+                                            data-cue="zoomIn">
+                                            Total Area of Room
+                                            (m2)
 
+                                        </h1>
+                                        <p className="room-detils-desc"
+                                           data-cue="zoomIn">
+                                            <div className="room-detls-list-item" data-cue="zoomIn">
+                                                <div
+                                                    dangerouslySetInnerHTML={{__html: t(`rooms:rooms.${params.name.split('-')[0]}.size`)}}/>
+                                            </div>
+
+
+                                        </p>
                                         <h1 className="room-detils-title-2"
                                             data-cue="zoomIn">{t('rooms:MaximumCapacity')}</h1>
                                         <p className="room-detils-desc"
                                            data-cue="zoomIn">{t(`rooms:rooms.${params.name.split('-')[0]}.capacity`)}</p>
-                                        <div className="room-detls-list-item" data-cue="zoomIn">
 
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>

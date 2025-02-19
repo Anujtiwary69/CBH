@@ -598,7 +598,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .room-title-area {
     background-color: #fff;
     padding: 60px 0 335px;
-    margin-top: -71px;
+    margin-top: 10px;
     padding-bottom: 30px;
 }
 
@@ -8073,6 +8073,9 @@ a.dark-logo {
     .booking-button button{
         width: 180px;
     }
+    .room-title-area{
+        margin-top: 100px;
+    }
 }
 
 /* Small Mobile Screens */
@@ -8082,6 +8085,9 @@ a.dark-logo {
     }
     .booking-button button{
         width: 245px !important;
+    }
+    .room-title-area{
+        margin-top: 100px;
     }
 }
 .video-background-holder video {

@@ -11,6 +11,7 @@ import HeadSection from "@/app/[locale]/components/HeadSection";
 import JSSection from "@/app/[locale]/components/JSSection";
 import initTranslations from "@/app/i18n";
 import TranslationsProvider from "@/app/[locale]/components/TranslationsProvider";
+import 'rsuite/dist/rsuite-no-reset.min.css';
 
 
 export default async function RootLayout({

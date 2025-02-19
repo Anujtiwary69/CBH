@@ -6,6 +6,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import $ from 'jquery';
 import {useTranslation} from "react-i18next";
 import LanguageChanger from "@/app/[locale]/components/LanguageChanger";
+import {router} from "next/client";
 
 
 const menuItems = [
@@ -170,6 +171,13 @@ export default function Header() {
     // console.log(typeof menuItems);
 
     useEffect(() => {
+        const handleClick = () => {
+            router.push("/your-target-url"); // Change to your target URL
+        };
+        const meanBar = document.querySelector(".mean-container .mean-bar");
+        if (meanBar) {
+            meanBar.addEventListener("click", handleClick);
+        }
         const handleLanguageChange = () => {
             // Remove 'owl-loaded' and 'owl-drag' classes when language changes
             // $('.owl-carousel').each(function () {
@@ -193,10 +201,14 @@ export default function Header() {
         handleLanguageChange();
         // Cleanup to avoid memory leaks
         return () => {
+            const meanBarCleanup = document.querySelector(".mean-container .mean-bar");
+            if (meanBarCleanup) {
+                meanBarCleanup.removeEventListener("click", handleClick);
+            }
             i18n.off("languageChanged", handleLanguageChange);
         };
 
-    }, [i18n.language]); // Add dependencies here
+    }, [i18n.language,router]); // Add dependencies here
     return (
         <>
 

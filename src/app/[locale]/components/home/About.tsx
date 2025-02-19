@@ -5,8 +5,8 @@ import {useTranslation} from "react-i18next";
 export default function About() {
     const { t } = useTranslation();
     return (
-        <div className="about-area pt-40">
-            <div className="container mt-40">
+        <div className="about-area pt-50">
+            <div className="container mt-80">
                 <div className="row align-items-center">
 
                     <div className="col-lg-6 col-md-12  upper">
